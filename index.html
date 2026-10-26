@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ourives Cl(ai)to Goldfinger | Joalheria Sob Medida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold-primary: #D4AF37;
+      --gold-light: #F3E5AB;
+      --gold-dark: #997A15;
+      --bg-dark: #0a0c10;
+      --panel-dark: #12161f;
+      --card-dark: #181e2b;
+      --text-main: #f0f3f8;
+      --text-muted: #94a3b8;
+      --border-gold: rgba(212, 175, 55, 0.3);
+      --accent-whatsapp: #25D366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: radial-gradient(circle at 50% 0%, #171d2b 0%, #0a0c10 70%);
+    }
+
+    /* Header Goldfinger */
+    header {
+      background: rgba(10, 12, 16, 0.95);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 0.9rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-goldfinger {
+      height: 48px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .logo-goldfinger:hover {
+      transform: scale(1.03);
+    }
+
+    .goldfinger-vector-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .goldfinger-vector-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, #FFF1BD 0%, #D4AF37 50%, #AA820A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      text-shadow: 0 0 16px rgba(212, 175, 55, 0.35);
+    }
+
+    .goldfinger-vector-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 5px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-top: 3px;
+    }
+
+    .brand-title {
+      border-left: 1px solid var(--border-gold);
+      padding-left: 14px;
+    }
+
+    .brand-title h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .brand-title p {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .api-status-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-gold);
+      font-size: 0.78rem;
+      color: var(--gold-light);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .api-status-pill:hover {
+      background: rgba(212, 175, 55, 0.2);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 8px #10B981;
+    }
+
+    .status-dot.manual {
+      background: var(--gold-primary);
+      box-shadow: 0 0 8px var(--gold-primary);
+    }
+
+    /* Layout Principal */
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 24px;
+      padding: 20px 2rem;
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+      height: calc(100vh - 72px);
+    }
+
+    /* Chat Section */
+    .chat-card {
+      background: var(--panel-dark);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
+
+    .chat-top {
+      padding: 1rem 1.4rem;
+      background: rgba(24, 30, 43, 0.8);
+      border-bottom: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chat-advisor-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .advisor-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-primary), #69520a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .msg {
+      max-width: 88%;
+      padding: 13px 18px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      animation: msgAppear 0.25s ease;
+    }
+
+    @keyframes msgAppear {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg-ia {
+      align-self: flex-start;
+      background: rgba(24, 30, 43, 0.95);
+      border-left: 3px solid var(--gold-primary);
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      border-right: 1px solid rgba(212, 175, 55, 0.15);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      color: #E2E8F0;
+    }
+
+    .msg-user {
+      align-self: flex-end;
+      background: linear-gradient(135deg, #2b394f, #1b2434);
+      border: 1px solid var(--border-gold);
+      color: #fff;
+      border-radius: 10px 10px 2px 10px;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .option-chip {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .option-chip:hover {
+      background: var(--gold-primary);
+      color: #000;
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Régua Interativa de Larguras (2mm até 9mm) */
+    .ruler-container {
+      margin-top: 14px;
+      padding: 14px;
+      background: rgba(10, 12, 16, 0.7);
+      border: 1px solid var(--border-gold);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ruler-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .ruler-bands {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 6px;
+      padding: 10px 4px 6px 4px;
+      background: rgba(24, 30, 43, 0.6);
+      border-radius: 8px;
+    }
+
+    .ruler-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 6px 2px;
+      border-radius: 6px;
+    }
+
+    .ruler-item:hover {
+      background: rgba(212, 175, 55, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .ruler-bar {
+      width: 100%;
+      max-width: 28px;
+      background: linear-gradient(180deg, #F9E79F 0%, #D4AF37 50%, #997A15 100%);
+      border-radius: 3px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
+    }
+
+    .ruler-item:hover .ruler-bar {
+      box-shadow: 0 0 10px var(--gold-primary);
+    }
+
+    .ruler-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #fff;
+      font-family: monospace;
+    }
+
+    .ruler-sub {
+      font-size: 0.58rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .chat-bottom {
+      padding: 1rem 1.2rem;
+      border-top: 1px solid var(--border-gold);
+      background: rgba(10, 12, 16, 0.7);
+      display: flex;
+      gap: 10px;
+    }
+
+    .chat-bottom input {
+      flex: 1;
+      background: #0f131a;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 11px 16px;
+      color: #fff;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    .chat-bottom input:focus {
+      border-color: var(--gold-primary);
+    }
+
+    .chat-bottom button {
+      background: var(--gold-primary);
+      color: #0a0c10;
+      border: none;
+      border-radius: 8px;
+      padding: 0 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .chat-bottom button:hover {
+      background: var(--gold-light);
+    }
+
+    /* Right: Card da Ficha & Lojas */
+    .spec-card {
+      background: var(--panel-dark);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      overflow-y: auto;
+    }
+
+    .spec-top {
+      border-bottom: 1px solid var(--border-gold);
+      padding-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .spec-top h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      color: var(--gold-light);
+      letter-spacing: 1px;
+    }
+
+    .ref-badge {
+      font-family: monospace;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      border: 1px dashed var(--gold-primary);
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .visual-preview {
+      background: radial-gradient(circle, #222b3d 0%, #131822 100%);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+      margin: 1.2rem 0;
+    }
+
+    .jewel-icon-big {
+      font-size: 3.8rem;
+      filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.6));
+      transition: transform 0.3s;
+    }
+
+    .jewel-icon-big:hover {
+      transform: scale(1.1);
+    }
+
+    .spec-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      padding-bottom: 7px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .spec-item-label {
+      color: var(--text-muted);
+    }
+
+    .spec-item-val {
+      font-weight: 500;
+      color: #fff;
+      text-align: right;
+    }
+
+    /* Caixa seletora de lojas reais */
+    .store-box {
+      margin-top: 1.2rem;
+      padding: 14px;
+      background: rgba(10, 12, 16, 0.6);
+      border-radius: 8px;
+      border: 1px solid var(--border-gold);
+    }
+
+    .store-box label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    .store-select {
+      width: 100%;
+      background: #181e2b;
+      border: 1px solid var(--border-gold);
+      color: #fff;
+      padding: 9px 12px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .store-info-hint {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* WhatsApp Button */
+    .btn-goldfinger-whatsapp {
+      margin-top: 1.2rem;
+      background: var(--accent-whatsapp);
+      color: #082110;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-goldfinger-whatsapp:hover {
+      background: #2ee672;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Modal API Config */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--panel-dark);
+      border: 1px solid var(--gold-primary);
+      border-radius: 12px;
+      max-width: 520px;
+      width: 90%;
+      padding: 1.8rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    }
+
+    .modal-card h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+
+    .modal-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .modal-card input {
+      width: 100%;
+      padding: 10px 14px;
+      background: #0a0c10;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      color: #fff;
+      font-family: monospace;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gold-primary);
+      border: none;
+      color: #000;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Responsividade */
+    @media (max-width: 960px) {
+      body {
+        height: auto;
+      }
+      main {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .chat-card {
+        height: 520px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar com Identidade Oficial Goldfinger -->
+  <header>
+    <div class="brand-container" onclick="window.open('https://www.goldfinger.com.br', '_blank')" title="Ir para o site da Goldfinger">
+      <div class="brand-logo-wrap">
+        <img src="goldfinger-logo.svg" 
+             alt="Goldfinger Joias e Relógios" 
+             class="logo-goldfinger"
+             onerror="this.src='https://goldfinger.vtexassets.com/assets/vtex.file-manager-graphql/images/8b34fcfe-3661-4ccb-93f3-994e93417042___174d8f5395a57eeb46efc498f5096cd3.png'">
+      </div>
+      <div class="brand-title">
+        <h1>Ourives Cl<span style="color:var(--gold-primary); font-weight:700;">(ai)</span>to</h1>
+        <p>Ateliê Sob Medida &amp; Alta Joalheria</p>
+      </div>
+    </div>
+
+    <!-- Indicador e Botão de Conectar API -->
+    <div class="api-status-pill" id="apiStatusBtn" onclick="openApiModal()">
+      <div class="status-dot" id="apiDot"></div>
+      <span id="apiStatusText">IA Inteligente Ativa</span>
+      <span style="font-size: 0.7rem; opacity: 0.7;">⚙ Configurar API</span>
+    </div>
+  </header>
+
+  <!-- Container Principal -->
+  <main>
+    <!-- Chat do Ourives Virtual -->
+    <section class="chat-card">
+      <div class="chat-top">
+        <div class="chat-advisor-info">
+          <div class="advisor-avatar">💍</div>
+          <div>
+            <h3 style="font-size: 0.98rem; font-weight: 600; color: var(--gold-light);">Juntos criaremos sua aliança para sempre</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chatMessages"></div>
+
+      <div class="chat-bottom">
+        <input type="text" id="userInput" placeholder="Escreva sua ideia ou clique nas opções acima..." />
+        <button id="sendBtn" onclick="handleSend()">Enviar</button>
+      </div>
+    </section>
+
+    <!-- Ficha Técnica & Rede de Lojas Goldfinger -->
+    <section class="spec-card">
+      <div>
+        <div class="spec-top">
+          <h2>Ficha de Criação</h2>
+          <div class="ref-badge" id="refBadge">REF-GF2026-0000</div>
+        </div>
+
+        <div class="visual-preview">
+          <div class="jewel-icon-big" id="jewelIcon">💍</div>
+          <p style="font-size: 0.85rem; color: var(--gold-light); margin-top: 8px; font-weight: 500;" id="jewelTitle">
+            Aliança Exclusiva Goldfinger
+          </p>
+        </div>
+
+        <div class="spec-details-list">
+          <div class="spec-item">
+            <span class="spec-item-label">Material / Metal:</span>
+            <span class="spec-item-val" id="specMetal">Em definição</span>
+          </div>
+          <div class="spec-item" id="specWidthRow">
+            <span class="spec-item-label">Largura:</span>
+            <span class="spec-item-val" id="specWidth">Em definição</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item-label">Perfil Externo:</span>
+            <span class="spec-item-val" id="specOuterProfile">Em definição</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item-label">Perfil Interno:</span>
+            <span class="spec-item-val" id="specInnerProfile">Em definição</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item-label">Altura / Espessura:</span>
+            <span class="spec-item-val" id="specHeight">Em definição</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item-label">Gemas / Pedras:</span>
+            <span class="spec-item-val" id="specStone">Em definição</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item-label">Detalhes Especiais:</span>
+            <span class="spec-item-val" id="specDetails">Em definição</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item-label">Acabamento:</span>
+            <span class="spec-item-val" id="specFinish">Em definição</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-item-label">Gravação Interna:</span>
+            <span class="spec-item-val" id="specEngraving">Em definição</span>
+          </div>
+        </div>
+
+        <!-- Seletor com Todas as Unidades Oficiais Goldfinger -->
+        <div class="store-box">
+          <label for="storeSelect">Escolha a Unidade Goldfinger para Atendimento:</label>
+          <select id="storeSelect" class="store-select" onchange="updateWhatsAppLink()">
+            <!-- São José dos Campos (8 unidades) -->
+            <optgroup label="São José dos Campos - SP">
+              <option value="5512974013097|Goldfinger Center Vale Shopping">Center Vale Shopping - WhatsApp (12) 97401-3097</option>
+              <option value="5512974068879|Goldfinger Shopping Vale Sul">Shopping Vale Sul - WhatsApp (12) 97406-8879</option>
+              <option value="5512974031054|Goldfinger Shopping Oriente">Shopping Oriente - WhatsApp (12) 97403-1054</option>
+              <option value="5512974043561|Goldfinger Shopping Centro">Shopping Centro (R. Rubião Junior) - WhatsApp (12) 97404-3561</option>
+              <option value="5512974076896|Goldfinger Shopping Faro Calçadão">Shopping Faro Calçadão - WhatsApp (12) 97407-6896</option>
+              <option value="5512974063802|Goldfinger Av. Andrômeda">Loja Rua (Av. Andrômeda, 1772) - WhatsApp (12) 97406-3802</option>
+              <option value="5512974100274|Goldfinger Rua Sete de Setembro">Loja Centro (R. Sete de Setembro, 127) - WhatsApp (12) 97410-0274</option>
+              <option value="5512974041156|Goldfinger Shopping Colinas">Shopping Colinas - WhatsApp (12) 97404-1156</option>
+            </optgroup>
+
+            <!-- Taubaté (4 unidades) -->
+            <optgroup label="Taubaté - SP">
+              <option value="5512996414668|Goldfinger Taubaté Shopping">Taubaté Shopping - WhatsApp (12) 99641-4668</option>
+              <option value="5512996280267|Goldfinger Taubaté Centro (15 de Novembro)">Centro (R. Quinze de Novembro, 620) - WhatsApp (12) 99628-0267</option>
+              <option value="5512996220481|Goldfinger Taubaté Centro (Carneiro de Souza)">Centro (R. Carneiro de Souza, 88) - WhatsApp (12) 99622-0481</option>
+              <option value="5512997233402|Goldfinger Taubaté (Praça Dom Epaminondas)">Praça Dom Epaminondas, 35 - WhatsApp (12) 99723-3402</option>
+            </optgroup>
+
+            <!-- Jacareí (4 unidades) -->
+            <optgroup label="Jacareí - SP">
+              <option value="5512974098471|Goldfinger Jacareí Shopping">Jacareí Shopping (R. Olímpio Catão) - WhatsApp (12) 97409-8471</option>
+              <option value="5512974096805|Goldfinger Jacareí (Praça Conde Frontin)">Praça Conde Frontin, 54 - WhatsApp (12) 97409-6805</option>
+              <option value="5512974033638|Goldfinger Jacareí (Dr. Lúcio Malta)">R. Dr. Lúcio Malta, 534 - WhatsApp (12) 97403-3638</option>
+              <option value="5512992177477|Goldfinger Jacareí (R. Alfredo Schurig)">R. Alfredo Schurig, 77 - WhatsApp (12) 99217-7477</option>
+            </optgroup>
+
+            <!-- Guaratinguetá (3 unidades) -->
+            <optgroup label="Guaratinguetá - SP">
+              <option value="5512996517908|Goldfinger Guaratinguetá Buriti Shopping">Buriti Shopping - WhatsApp (12) 99651-7908</option>
+              <option value="5512991962022|Goldfinger Guaratinguetá Centro (Dr. Martiniano)">Centro (R. Dr. Martiniano, 77) - WhatsApp (12) 99196-2022</option>
+              <option value="551230134999|Goldfinger Guaratinguetá (Pça Conselheiro Rodrigues Alves)">Praça Conselheiro Rodrigues Alves, 185 - WhatsApp (12) 3013-4999</option>
+            </optgroup>
+
+            <!-- Pindamonhangaba (3 unidades) -->
+            <optgroup label="Pindamonhangaba - SP">
+              <option value="5512997234729|Goldfinger Pindamonhangaba (Dr. Jorge Tibiriçá)">Centro (R. Dr. Jorge Tibiriçá, 162) - WhatsApp (12) 99723-4729</option>
+              <option value="5512996415151|Goldfinger Pindamonhangaba (Dep. Claro César)">Centro (R. Deputado Claro César, 180) - WhatsApp (12) 99641-5151</option>
+              <option value="551235225020|Goldfinger Pindamonhangaba Shopping Pátio Pinda">Shopping Pátio Pinda - WhatsApp (12) 3522-5020</option>
+            </optgroup>
+
+            <!-- Litoral Norte de SP (5 unidades) -->
+            <optgroup label="Litoral Norte - SP">
+              <option value="5512997186152|Goldfinger Caraguatatuba Centro">Caraguatatuba Centro (Av. Altino Arantes) - WhatsApp (12) 99718-6152</option>
+              <option value="5512996657166|Goldfinger Caraguatatuba Serramar Shopping">Caraguatatuba (Serramar Shopping) - WhatsApp (12) 99665-7166</option>
+              <option value="5512997181915|Goldfinger São Sebastião Centro (Benjamin Constant)">São Sebastião Centro (R. Benjamin Constant) - WhatsApp (12) 99718-1915</option>
+              <option value="5512996610395|Goldfinger São Sebastião Centro (Armando Salles)">São Sebastião (Av. Dr. Armando Salles) - WhatsApp (12) 99661-0395</option>
+              <option value="5512997239887|Goldfinger Ubatuba Centro">Ubatuba Centro (Praça Nóbrega, 166) - WhatsApp (12) 99723-9887</option>
+            </optgroup>
+
+            <!-- Vale e Serra da Mantiqueira - SP -->
+            <optgroup label="Vale & Serra da Mantiqueira - SP">
+              <option value="5512997381631|Goldfinger Campos do Jordão">Campos do Jordão (Abernéssia) - WhatsApp (12) 99738-1631</option>
+              <option value="5512996628646|Goldfinger Caçapava Centro">Caçapava Centro (R. Capitão João Ramos) - WhatsApp (12) 99662-8646</option>
+              <option value="5512997073801|Goldfinger Lorena Centro">Lorena Centro (R. Dr. Rodrigues de Azevedo) - WhatsApp (12) 99707-3801</option>
+              <option value="551231440533|Goldfinger Cruzeiro Centro">Cruzeiro Centro (Av. Jorge Tibiriçá) - WhatsApp (12) 3144-0533</option>
+            </optgroup>
+
+            <!-- Mogi Guaçu - SP -->
+            <optgroup label="Mogi Guaçu - SP">
+              <option value="5512996851909|Goldfinger Mogi Guaçu Buriti Shopping">Buriti Shopping Mogi Guaçu - WhatsApp (12) 99685-1909</option>
+            </optgroup>
+
+            <!-- Paraná - PR -->
+            <optgroup label="Paraná - PR">
+              <option value="5545999743482|Goldfinger Cascavel Catuaí Shopping">Cascavel (Catuaí Shopping) - WhatsApp (45) 99974-3482</option>
+              <option value="5512996744308|Goldfinger Cascavel Centro (Av. Brasil)">Cascavel Centro (Av. Brasil, 6198) - Atendimento Rede</option>
+              <option value="5512996744308|Goldfinger Ponta Grossa Centro">Ponta Grossa Centro (Av. Dr. Vicente Machado) - Atendimento Rede</option>
+              <option value="5512996744308|Goldfinger Ponta Grossa Shopping Palladium">Ponta Grossa (Shopping Palladium) - Atendimento Rede</option>
+            </optgroup>
+
+            <!-- Central Geral -->
+            <optgroup label="Atendimento Central / Suporte">
+              <option value="5512996744308|Goldfinger Central de Atendimento">Central Geral Goldfinger - WhatsApp (12) 99674-4308</option>
+            </optgroup>
+          </select>
+          <div class="store-info-hint" id="storeHint">A vendedora desta loja receberá seu código de referência.</div>
+        </div>
+      </div>
+
+      <div>
+        <a id="btnWhatsApp" href="#" target="_blank" class="btn-goldfinger-whatsapp">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          Falar com Vendedora no WhatsApp
+        </a>
+        <p style="font-size: 0.72rem; color: var(--text-muted); text-align: center; margin-top: 9px; line-height: 1.4;">
+          A vendedora da Goldfinger receberá a referência da sua joia e apresentará valores, opções de pagamento e prazos de confecção.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal para Configuração da Chave de API (Gemini / OpenAI) -->
+  <div class="modal-overlay" id="apiModal">
+    <div class="modal-card">
+      <h3>Conectar API de Inteligência Artificial</h3>
+      <p>
+        Para uma consultoria 100% dinâmica que responde livremente qualquer dúvida e cria joias sob medida em tempo real, você pode inserir sua chave do <strong>Google Gemini</strong> ou <strong>OpenAI</strong>.
+      </p>
+      <label style="display:block; font-size:0.75rem; color:var(--gold-light); margin-bottom:6px;">SELECIONE O PROVEDOR:</label>
+      <select id="apiProvider" style="width:100%; padding:9px; background:#0a0c10; border:1px solid rgba(255,255,255,0.2); border-radius:6px; color:#fff; margin-bottom:14px; font-family:inherit;">
+        <option value="gemini">Google Gemini API (Recomendado - Gratuito)</option>
+        <option value="openai">OpenAI ChatGPT API</option>
+      </select>
+      
+      <label style="display:block; font-size:0.75rem; color:var(--gold-light); margin-bottom:6px;">SUA CHAVE DE API (API KEY):</label>
+      <input type="password" id="apiKeyInput" placeholder="Ex: AIzaSy... ou sk-proj-..." />
+
+      <p style="font-size: 0.75rem; color: #8892b0;">
+        🔒 Sua chave é salva exclusivamente no seu próprio navegador (LocalStorage) e nunca é compartilhada com terceiros. Se não colocar uma chave, o sistema continuará funcionando no modo <em>Ourives Especialista Embutido</em> perfeitamente.
+      </p>
+
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="closeApiModal()">Cancelar</button>
+        <button class="btn-primary" onclick="saveApiKey()">Salvar e Conectar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Gerar Código de Referência Goldfinger Único
+    const refUnique = "GF-" + Math.floor(100000 + Math.random() * 900000);
+    document.getElementById("refBadge").innerText = refUnique;
+
+    // Estado da Aliança
+    const jewelState = {
+      metal: "",
+      width: "",
+      outerProfile: "",
+      innerProfile: "",
+      height: "",
+      stone: "",
+      details: "",
+      finish: "",
+      engraving: ""
+    };
+
+    // Fluxo Especialista em Alianças Goldfinger
+    let currentStep = 0;
+    const conversationScript = [
+      {
+        question: "Olá! Seja muito bem-vindo ao **Ourives Cl(ai)to** da Goldfinger. Juntos criaremos sua aliança para sempre! ✨<br><br>Para darmos o primeiro passo, **qual material nobre você deseja como base das alianças?**",
+        options: [
+          "Ouro 18k",
+          "Ouro 10k",
+          "Prata 925"
+        ],
+        field: "metal"
+      },
+      {
+        question: "Excelente escolha! Agora defina a **largura das alianças (de 2mm até 9mm)**.<br><small style='color:var(--text-muted);'>Consulte a régua comparativa abaixo para escolher a proporção ideal:</small>",
+        options: ["2mm", "3mm", "4mm", "5mm", "6mm", "7mm", "8mm", "9mm"],
+        showRuler: true,
+        field: "width"
+      },
+      {
+        question: "Perfeito! Qual **perfil externo** você prefere para o contorno de fora da aliança?",
+        options: [
+          "Reto / Flat (Moderno e Geométrico)",
+          "Abaulado / Tradicional (Curvatura Clássica Suave)",
+          "Semi-Abaulado (Equilíbrio entre Reto e Curvo)",
+          "Chanfrado (Bordas Lapidadas em Ângulo)"
+        ],
+        field: "outerProfile"
+      },
+      {
+        question: "Maravilhoso! E para o **perfil interno** (o contato direto com o dedo)?",
+        options: [
+          "Anatômica / Comfort (Conforto Máximo Arredondado)",
+          "Semi-Anatômica (Conforto Leve)",
+          "Tradicional / Reta (Interior Plano Clássico)"
+        ],
+        field: "innerProfile"
+      },
+      {
+        question: "Ótimo. Qual **altura / espessura** você imagina para a estrutura da peça?",
+        options: [
+          "Padrão / Confortável (aprox. 1.2mm)",
+          "Média / Encorpada (aprox. 1.5mm)",
+          "Alta / Robusta (aprox. 1.8mm a 2.0mm)"
+        ],
+        field: "height"
+      },
+      {
+        question: "Deseja adicionar **gemas ou diamantes** na aliança?",
+        options: [
+          "Diamante Central Solitário (Ponto de Luz)",
+          "Trio de Diamantes",
+          "Fileira / Cravação de Diamantes",
+          "Esmeralda ou Safira",
+          "Sem pedras (Apenas o metal nobre)"
+        ],
+        field: "stone"
+      },
+      {
+        question: "Gostaria de algum **detalhe especial no design**?",
+        options: [
+          "Friso Central em Baixo-Relevo",
+          "Dois Frisos Laterais",
+          "Bicolor (Ouro Amarelo e Branco)",
+          "Sem frisos / Design liso e puro"
+        ],
+        field: "details"
+      },
+      {
+        question: "Qual **acabamento de superfície** traduz melhor o casal?",
+        options: [
+          "Polido Espelhado (Brilho Máximo Tradicional)",
+          "Fosco Acetinado / Escovado (Elegância Contemporânea)",
+          "Diamantado / Texturizado (Brilho Cintilante)",
+          "Misto (Polido com Friso Fosco)"
+        ],
+        field: "finish"
+      },
+      {
+        question: "Para eternizar o momento: deseja incluir a **gravação interna personalizada**?",
+        options: [
+          "Sim (Nomes + Data do Casamento/Noivado)",
+          "Sim (Frase especial / Versículo / Símbolo ∞)",
+          "Definir a gravação posteriormente na loja"
+        ],
+        field: "engraving"
+      }
+    ];
+
+    // Histórico de mensagens para API
+    let chatHistory = [];
+
+    function addMessage(sender, text, options = [], showRuler = false) {
+      const chatContainer = document.getElementById("chatMessages");
+      const msgDiv = document.createElement("div");
+      msgDiv.className = `msg ${sender === 'ia' ? 'msg-ia' : 'msg-user'}`;
+      
+      let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      msgDiv.innerHTML = formattedText;
+
+      // Adiciona a Régua Comparativa Interativa (2mm a 9mm)
+      if (showRuler) {
+        const rulerDiv = document.createElement("div");
+        rulerDiv.className = "ruler-container";
+        rulerDiv.innerHTML = `
+          <div class="ruler-header">
+            <span>📏 Régua de Larguras da Joia</span>
+            <span style="font-size:0.7rem; color:var(--text-muted);">(Clique na medida desejada)</span>
+          </div>
+          <div class="ruler-bands">
+            <div class="ruler-item" onclick="selectOption('2mm')">
+              <div class="ruler-bar" style="height: 10px;"></div>
+              <span class="ruler-label">2mm</span>
+              <span class="ruler-sub">Delicada</span>
+            </div>
+            <div class="ruler-item" onclick="selectOption('3mm')">
+              <div class="ruler-bar" style="height: 16px;"></div>
+              <span class="ruler-label">3mm</span>
+              <span class="ruler-sub">Fina</span>
+            </div>
+            <div class="ruler-item" onclick="selectOption('4mm')">
+              <div class="ruler-bar" style="height: 22px;"></div>
+              <span class="ruler-label">4mm</span>
+              <span class="ruler-sub">Média Fina</span>
+            </div>
+            <div class="ruler-item" onclick="selectOption('5mm')">
+              <div class="ruler-bar" style="height: 28px;"></div>
+              <span class="ruler-label">5mm</span>
+              <span class="ruler-sub">Clássica</span>
+            </div>
+            <div class="ruler-item" onclick="selectOption('6mm')">
+              <div class="ruler-bar" style="height: 35px;"></div>
+              <span class="ruler-label">6mm</span>
+              <span class="ruler-sub">Tradicional</span>
+            </div>
+            <div class="ruler-item" onclick="selectOption('7mm')">
+              <div class="ruler-bar" style="height: 42px;"></div>
+              <span class="ruler-label">7mm</span>
+              <span class="ruler-sub">Larga</span>
+            </div>
+            <div class="ruler-item" onclick="selectOption('8mm')">
+              <div class="ruler-bar" style="height: 50px;"></div>
+              <span class="ruler-label">8mm</span>
+              <span class="ruler-sub">Robusta</span>
+            </div>
+            <div class="ruler-item" onclick="selectOption('9mm')">
+              <div class="ruler-bar" style="height: 58px;"></div>
+              <span class="ruler-label">9mm</span>
+              <span class="ruler-sub">Imponente</span>
+            </div>
+          </div>
+        `;
+        msgDiv.appendChild(rulerDiv);
+      }
+
+      if (options.length > 0 && !showRuler) {
+        const grid = document.createElement("div");
+        grid.className = "options-grid";
+        options.forEach(opt => {
+          const chip = document.createElement("button");
+          chip.className = "option-chip";
+          chip.innerText = opt;
+          chip.onclick = () => selectOption(opt);
+          grid.appendChild(chip);
+        });
+        msgDiv.appendChild(grid);
+      }
+
+      chatContainer.appendChild(msgDiv);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      chatHistory.push({ role: sender === 'ia' ? 'assistant' : 'user', content: text });
+    }
+
+    function selectOption(text) {
+      addMessage("user", text);
+      processResponse(text);
+    }
+
+    function handleSend() {
+      const input = document.getElementById("userInput");
+      const val = input.value.trim();
+      if (!val) return;
+      addMessage("user", val);
+      input.value = "";
+      processResponse(val);
+    }
+
+    document.getElementById("userInput").addEventListener("keydown", function(e) {
+      if (e.key === "Enter") handleSend();
+    });
+
+    async function processResponse(answer) {
+      // 1. Atualiza ficha local
+      if (currentStep < conversationScript.length) {
+        const currentField = conversationScript[currentStep].field;
+        jewelState[currentField] = answer;
+        updateSheet();
+        currentStep++;
+      }
+
+      const apiKey = localStorage.getItem("gf_api_key");
+      const apiProvider = localStorage.getItem("gf_api_provider") || "gemini";
+
+      // Se o usuário configurou uma API real (Gemini ou OpenAI), chamamos a IA externa
+      if (apiKey) {
+        showTypingIndicator();
+        try {
+          const aiResponse = await callExternalAI(apiProvider, apiKey, answer);
+          removeTypingIndicator();
+          addMessage("ia", aiResponse);
+          return;
+        } catch (err) {
+          console.error("Erro na API:", err);
+          removeTypingIndicator();
+          addMessage("ia", "*(Aviso: Houve uma instabilidade na conexão com a API externa. Prosseguindo no modo consultor local)*");
+        }
+      }
+
+      // Modo Padrão Inteligente Embutido (sem necessidade de API key)
+      setTimeout(() => {
+        if (currentStep < conversationScript.length) {
+          const next = conversationScript[currentStep];
+          addMessage("ia", next.question, next.options, !!next.showRuler);
+        } else {
+          addMessage("ia", `Sua joia está devidamente registrada com o código **${refUnique}**! Selecione a loja Goldfinger mais próxima de você ao lado e clique em **Falar com Vendedora no WhatsApp** para receber orçamentos e prazos.`);
+        }
+      }, 500);
+    }
+
+    function showTypingIndicator() {
+      const chatContainer = document.getElementById("chatMessages");
+      const typingDiv = document.createElement("div");
+      typingDiv.id = "typingIndicator";
+      typingDiv.className = "msg msg-ia";
+      typingDiv.innerHTML = "<em>Consultando os mestres joalheiros Goldfinger... ✨</em>";
+      chatContainer.appendChild(typingDiv);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    function removeTypingIndicator() {
+      const el = document.getElementById("typingIndicator");
+      if (el) el.remove();
+    }
+
+    // Chamada às APIs (Gemini ou OpenAI)
+    async function callExternalAI(provider, key, userMessage) {
+      const systemPrompt = `Você é o "Ourives Cl(ai)to", consultor virtual e mestre joalheiro da Joalheria Goldfinger. Seja muito cortês, refinado, especialista em alta joalheria, ouro 18k, diamantes e pedras preciosas. 
+      Seu objetivo é ajudar o cliente a definir os detalhes de uma peça sob medida. Lembre-se: você NÃO passa preços, pois os valores, orçamentos e formas de pagamento são fornecidos exclusivamente pelas vendedoras das lojas físicas da Goldfinger após a geração da referência ${refUnique}.
+      Responda de forma elegante, acolhedora e concisa (máximo 2 a 3 parágrafos curtos).`;
+
+      if (provider === "gemini") {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`;
+        const res = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [
+              { role: "user", parts: [{ text: systemPrompt + "\n\nCliente: " + userMessage }] }
+            ]
+          })
+        });
+        const data = await res.json();
+        return data.candidates[0].content.parts[0].text;
+      } else {
+        const url = "https://api.openai.com/v1/chat/completions";
+        const res = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${key}`
+          },
+          body: JSON.stringify({
+            model: "gpt-4o-mini",
+            messages: [
+              { role: "system", content: systemPrompt },
+              { role: "user", content: userMessage }
+            ]
+          })
+        });
+        const data = await res.json();
+        return data.choices[0].message.content;
+      }
+    }
+
+    function updateSheet() {
+      if (jewelState.metal) document.getElementById("specMetal").innerText = jewelState.metal;
+      if (jewelState.width) document.getElementById("specWidth").innerText = jewelState.width;
+      if (jewelState.outerProfile) document.getElementById("specOuterProfile").innerText = jewelState.outerProfile;
+      if (jewelState.innerProfile) document.getElementById("specInnerProfile").innerText = jewelState.innerProfile;
+      if (jewelState.height) document.getElementById("specHeight").innerText = jewelState.height;
+      if (jewelState.stone) document.getElementById("specStone").innerText = jewelState.stone;
+      if (jewelState.details) document.getElementById("specDetails").innerText = jewelState.details;
+      if (jewelState.finish) document.getElementById("specFinish").innerText = jewelState.finish;
+      if (jewelState.engraving) document.getElementById("specEngraving").innerText = jewelState.engraving;
+      
+      updateWhatsAppLink();
+    }
+
+    function updateWhatsAppLink() {
+      const storeSelect = document.getElementById("storeSelect");
+      const [phone, storeName] = storeSelect.value.split("|");
+      const ref = document.getElementById("refBadge").innerText;
+
+      document.getElementById("storeHint").innerText = `Encaminhando para WhatsApp de ${storeName}`;
+
+      const message = 
+        `Olá! Estive no Ourives Cl(ai)to da Goldfinger e desenvolvi um projeto exclusivo de alianças.\n\n` +
+        `💍 *FICHA TÉCNICA DE ALIANÇAS - REFERÊNCIA: ${ref}*\n` +
+        `• Unidade de Atendimento: ${storeName}\n` +
+        `• Material: ${jewelState.metal || "A definir"}\n` +
+        `• Largura: ${jewelState.width || "A definir"}\n` +
+        `• Perfil Externo: ${jewelState.outerProfile || "A definir"}\n` +
+        `• Perfil Interno: ${jewelState.innerProfile || "A definir"}\n` +
+        `• Altura / Espessura: ${jewelState.height || "A definir"}\n` +
+        `• Gemas: ${jewelState.stone || "A definir"}\n` +
+        `• Detalhes: ${jewelState.details || "A definir"}\n` +
+        `• Acabamento: ${jewelState.finish || "A definir"}\n` +
+        `• Gravação Interna: ${jewelState.engraving || "A definir"}\n` +
+        `\nGostaria de receber o orçamento, condições de pagamento e prazos de confecção com a vendedora desta loja.`;
+
+      const encodedMsg = encodeURIComponent(message);
+      document.getElementById("btnWhatsApp").href = `https://wa.me/${phone}?text=${encodedMsg}`;
+    }
+
+    // Modal API Management
+    function openApiModal() {
+      document.getElementById("apiModal").classList.add("active");
+      const savedKey = localStorage.getItem("gf_api_key");
+      const savedProvider = localStorage.getItem("gf_api_provider") || "gemini";
+      if (savedKey) document.getElementById("apiKeyInput").value = savedKey;
+      document.getElementById("apiProvider").value = savedProvider;
+    }
+
+    function closeApiModal() {
+      document.getElementById("apiModal").classList.remove("active");
+    }
+
+    function saveApiKey() {
+      const key = document.getElementById("apiKeyInput").value.trim();
+      const provider = document.getElementById("apiProvider").value;
+      if (key) {
+        localStorage.setItem("gf_api_key", key);
+        localStorage.setItem("gf_api_provider", provider);
+        checkApiStatus();
+        alert("Chave de API salva com sucesso! Agora o Ourives responderá com inteligência artificial em tempo real.");
+      } else {
+        localStorage.removeItem("gf_api_key");
+        checkApiStatus();
+        alert("Modo padrão restabelecido.");
+      }
+      closeApiModal();
+    }
+
+    function checkApiStatus() {
+      const key = localStorage.getItem("gf_api_key");
+      const dot = document.getElementById("apiDot");
+      const txt = document.getElementById("apiStatusText");
+      if (key) {
+        dot.className = "status-dot";
+        txt.innerText = "API Conectada";
+      } else {
+        dot.className = "status-dot manual";
+        txt.innerText = "Modo Consultor Goldfinger";
+      }
+    }
+
+    // Inicialização
+    window.onload = () => {
+      checkApiStatus();
+      const first = conversationScript[0];
+      addMessage("ia", first.question, first.options);
+      updateWhatsAppLink();
+    };
+  </script>
+</body>
+</html>
